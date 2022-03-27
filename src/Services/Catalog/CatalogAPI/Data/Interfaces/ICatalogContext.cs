@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CatalogAPI.Data.Interfaces
 {
-    interface ICatalogContext
+    public interface ICatalogContext
     {
         IMongoCollection<Product> Products { get; }
     }
