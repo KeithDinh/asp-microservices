@@ -1,3 +1,7 @@
+using CatalogAPI.Data;
+using CatalogAPI.Data.Interfaces;
+using CatalogAPI.Repositories;
+using CatalogAPI.Repositories.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -27,6 +31,8 @@ namespace CatalogAPI
         {
 
             services.AddControllers();
+            services.AddScoped<ICatalogContext, CatalogContext>();
+            services.AddScoped<IProductRepository, ProductRepository>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CatalogAPI", Version = "v1" });
