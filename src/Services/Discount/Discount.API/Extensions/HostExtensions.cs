@@ -66,8 +66,6 @@ namespace Discount.API.Extensions
 
                 return host;
             }
-
-            return host;
         }
     }
 }
